@@ -52,9 +52,7 @@ def sarsa(env,
             return np.argmax(Q[state])
         else:
             return np.random.randint(nA)
-    def decay_schedule(init_value, min_value, decay_ratio, n_episodes):
-        values = [max(init_value * (decay_ratio ** i), min_value) for i in range(n_episodes)]
-        return values
+
     alphas = decay_schedule(init_alpha, min_alpha, alpha_decay_ratio, n_episodes)
     epsilons = decay_schedule(init_epsilon, min_epsilon, epsilon_decay_ratio, n_episodes)
     for e in tqdm(range(n_episodes), leave=False):
@@ -86,7 +84,7 @@ def sarsa(env,
 
 ### State value functions of SARSA learning.
 
-![Output_3](op3.png)
+![Output_3](op33.png)
 
 ## RESULT:
 
